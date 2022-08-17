@@ -18,7 +18,7 @@ CREATE TABLE SpotifyClone.users(
       name VARCHAR(35) NOT NULL,
       age INT,
       plan_id TINYINT NOT NULL,
-      signing_date DATE,
+      signing_date DATE DEFAULT(NOW()),
       FOREIGN KEY (plan_id) REFERENCES SpotifyClone.plans(id)
   ) engine = InnoDB;
   
@@ -143,6 +143,5 @@ INSERT INTO SpotifyClone.followers (id, user_id, artist_id)
     (10, 6, 6),
     (11, 6, 1),
     (12, 7, 6),
-    (13, 8, NULL),
-    (14, 9, 3),
-    (15, 10, 2);
+    (13, 9, 3),
+    (14, 10, 2);
